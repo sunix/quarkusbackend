@@ -28,7 +28,7 @@ components:
       - name: root_password
         value: 'password'
       - name: uri
-        value: 'jdbc:mysql://localhost/sampledb'
+        value: 'jdbc:mysql://localhost:3306/sampledb'
     endpoints:
       - name: 'quarkus/dev'
         port: 8080
@@ -48,7 +48,7 @@ components:
       - name: root_password
         value: 'password'
       - name: uri
-        value: 'jdbc:mysql://localhost/sampledb'
+        value: 'jdbc:mysql://localhost:3306/sampledb'
     endpoints:
       - name: '8080/tcp'
         port: 8080
