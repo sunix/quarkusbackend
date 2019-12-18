@@ -8,7 +8,7 @@ projects:
       type: git
       location: 'https://github.com/veermuchandi/quarkusbackend'
     name: quarkusbackend
-    
+
 components:
 
   - alias: quarkus-backend-dev
@@ -28,11 +28,11 @@ components:
       - name: root_password
         value: 'password'
       - name: uri
-        value: 'mysql://localhost'
+        value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: 'quarkus/dev'
         port: 8080
-        
+
   - alias: quarkus-backend-native-prod
     type: dockerimage
     image: quay.io/quarkus/ubi-quarkus-native-image:19.2.0.1
@@ -48,7 +48,7 @@ components:
       - name: root_password
         value: 'password'
       - name: uri
-        value: 'mysql://localhost'
+        value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: '8080/tcp'
         port: 8080
@@ -77,14 +77,14 @@ components:
   - id: redhat/vscode-openshift-connector/latest
     type: chePlugin
     alias: vscode-openshift
-    
+
   - alias: git
     type: dockerimage
     image: sunix/git-devtools
     mountSources: true
     memoryLimit: 64M
     args: ['sleep', 'infinity']
-    
+
 commands:
   - name: start DEVMODE quarkus-backend
     actions:
@@ -92,7 +92,7 @@ commands:
         command: pkill java; mvn compile quarkus:dev
         component: quarkus-backend-dev
         workdir: /projects/quarkusbackend
-        
+
   - name: build NATIVE quarkus-backend
     actions:
       - type: exec
@@ -106,7 +106,7 @@ commands:
         command: ./quarkusbackend-1.0.0-SNAPSHOT-runner -Dquarkus.http.host=0.0.0.0
         component: quarkus-backend-native-prod
         workdir: /projects/quarkusbackend/target
-        
+
   - name: connect java debugger quarkus-backend
     actions:
       - type: vscode-launch
