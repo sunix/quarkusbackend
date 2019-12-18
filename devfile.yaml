@@ -21,14 +21,12 @@ components:
     env:
       - name: MAVEN_OPTS
         value: '-Dmaven.repo.local=/projects/local/m2repo'
-      - name: username
+      - name: QUARKUS_DATASOURCE_USERNAME
         value: 'user'
-      - name: password
+      - name: QUARKUS_DATASOURCE_USERNAME
         value: 'password'
-      - name: root_password
-        value: 'password'
-      - name: uri
-        value: 'jdbc:mysql://localhost:3306/sampledb'
+      - name: QUARKUS_DATASOURCE_USERNAME
+        value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: 'quarkus/dev'
         port: 8080
@@ -41,14 +39,12 @@ components:
     command: ['tail']
     args: ['-f', '/dev/null']
     env:
-      - name: username
+      - name: QUARKUS_DATASOURCE_USERNAME
         value: 'user'
-      - name: password
+      - name: QUARKUS_DATASOURCE_USERNAME
         value: 'password'
-      - name: root_password
-        value: 'password'
-      - name: uri
-        value: 'jdbc:mysql://localhost:3306/sampledb'
+      - name: QUARKUS_DATASOURCE_USERNAME
+        value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: '8080/tcp'
         port: 8080
