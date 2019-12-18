@@ -35,7 +35,7 @@ components:
         
   - alias: quarkus-backend-native-prod
     type: dockerimage
-    image: 
+    image: quay.io/quarkus/ubi-quarkus-native-image:19.2.0.1
     memoryLimit: 32M
     mountSources: true
     command: ['tail']
