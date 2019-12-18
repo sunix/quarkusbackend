@@ -6,7 +6,7 @@ projects:
 
   - source:
       type: git
-      location: 'https://github.com/veermuchandi/quarkusbackend'
+      location: 'https://github.com/sunix/quarkusbackend'
     name: quarkusbackend
 
 components:
@@ -21,11 +21,11 @@ components:
     env:
       - name: MAVEN_OPTS
         value: '-Dmaven.repo.local=/projects/local/m2repo'
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: username
         value: 'user'
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: password
         value: 'password'
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: uri
         value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: 'quarkus/dev'
@@ -39,11 +39,11 @@ components:
     command: ['tail']
     args: ['-f', '/dev/null']
     env:
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: username
         value: 'user'
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: password
         value: 'password'
-      - name: QUARKUS_DATASOURCE_USERNAME
+      - name: uri
         value: 'jdbc:mysql://localhost/sampledb'
     endpoints:
       - name: '8080/tcp'
