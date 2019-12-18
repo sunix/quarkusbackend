@@ -8,6 +8,7 @@ projects:
       type: git
       location: 'https://github.com/veermuchandi/quarkusbackend'
     name: quarkusbackend
+    
 components:
 
   - alias: quarkus-backend-dev
@@ -84,9 +85,7 @@ components:
     memoryLimit: 64M
     args: ['sleep', 'infinity']
     
-    
- commands:
-
+commands:
   - name: start DEVMODE quarkus-backend
     actions:
       - type: exec
